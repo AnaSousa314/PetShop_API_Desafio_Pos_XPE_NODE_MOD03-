@@ -121,3 +121,47 @@
 </p> 
 </li>
 </ul>
+
+### MongoDB - Posts
+
+<ul><strong>Endpoints</strong>  
+
+<li>
+        [👾] 01 - Cadastro de um post:  
+<p>
+	- URL: http://localhost:3000/post
+</p>
+<p>
+	- Método HTTP: POST
+</p>
+<p>
+        - Parâmetros: objeto JSON com o titulo e o conteudo. 
+</p>
+</li>
+
+<li>
+	[] 02 - Consulta de todos os posts (retornar uma lista com todos os posts, sendo cada post representado por um objeto JSON com todas as propriedades, incluindo os comentários de cada post): 
+<p>
+        - URL: http://localhost:3000/post
+</p>
+<p>
+	- Método HTTP: GET
+</p>
+<p>
+         - Parâmetros: sem parâmetros. 
+</p>
+</li>
+
+<li>
+	[] 03 - Cadastro de um comentário:
+<p>
+        - URL: http://localhost:3000/comentario
+</p>
+<p>
+	- Método HTTP: POST
+</p>
+<p>
+        - Parâmetros: objeto JSON com o id do post, nome do autor do comentário e o conteúdo do comentário. Observação: o id do post que será utilizado é a propriedade “_id”, um ObjectId gerado automaticamente pelo MongoDB. Para filtrar um post em específico pelo seu id, o filtro é parecido com o seguinte: {"_id": ObjectId("60c667caeb7c167026bcc96a")}
+</p> 
+</li>
+</ul>
