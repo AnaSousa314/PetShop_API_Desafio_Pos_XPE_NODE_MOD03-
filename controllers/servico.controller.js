@@ -18,7 +18,7 @@ async function createService(req, res, next){
 
 async function getServices(req, res, next){
   try {
-    res.send(await ServicoService.getServices());
+    res.send(await ServicoService.getServices(req.query.proprietarioId));
     logger.info("GET /servicos");
   } catch (err) {
     next(err)

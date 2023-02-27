@@ -24,7 +24,22 @@ async function getServices() {
   }
 }
 
+async function getServicesByOwner(ownerId) {
+  try {
+    return await Servico.findAll({
+      include: [
+        {
+          model: Animal, include:[ Proprietario ], where: {proprietarioId: ownerId}
+        }
+      ]
+    });
+  } catch (err) {
+    throw err;
+  }
+}
+
 export default {
   insertService,
-  getServices
+  getServices,
+  getServicesByOwner
 }

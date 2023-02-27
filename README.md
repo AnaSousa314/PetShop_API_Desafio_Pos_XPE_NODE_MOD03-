@@ -34,7 +34,7 @@
 
 [👽] 01 - Criação de um animal:  
         - URL: http://localhost:8000/animal/  
-        - Método HTTP: GET  
+        - Método HTTP: POST
         - Parâmetros: objeto JSON com o nome do animal, tipo do animal e o id do proprietário deste animal.   
 
 [👽] 02 - Atualização de um animal.  
@@ -98,26 +98,26 @@
 <li>
 	[👾] 02 - Consultar os serviços cadastrados (retornar todos os serviços realizados): 
 <p>
-- URL: http://localhost:3000/servico
+        - URL: http://localhost:3000/servico
 </p>
 <p>
 	- Método HTTP: GET
 </p>
 <p>
- - Parâmetros: sem parâmetros. 
+         - Parâmetros: sem parâmetros. 
 </p>
 </li>
 
 <li>
-	[ ] 03 - Consulta dos serviços realizados em animais de determinado proprietário (pegar  o  id  do  proprietário  na  URL  e  retornar  um  objeto  JSON  com  os serviços realizados por seus animais):  
+	[👾] 03 - Consulta dos serviços realizados em animais de determinado proprietário (pegar  o  id  do  proprietário  na  URL  e  retornar  um  objeto  JSON  com  os serviços realizados por seus animais):  
 <p>
-- URL: http://localhost:3000/servico?proprietario_id={proprietario_id}
+        - URL: http://localhost:3000/servico?proprietario_id={proprietario_id}
 </p>
 <p>
 	- Método HTTP: GET
 </p>
 <p>
- - Parâmetros: id do proprietário passado diretamente na URL, exemplo de um id de valor 15 passado na URL: http://localhost:3000/servico?proprietario_id=15 (Sugestão: pode ser usado a mesma estrutura do endpoint do item 2 que consulta todos os serviços, só que aqui, nesse caso, ele receberia um parâmetro para iltrar o proprietário).
+        - Parâmetros: id do proprietário passado diretamente na URL, exemplo de um id de valor 15 passado na URL: http://localhost:3000/servico?proprietario_id=15 (Sugestão: pode ser usado a mesma estrutura do endpoint do item 2 que consulta todos os serviços, só que aqui, nesse caso, ele receberia um parâmetro para iltrar o proprietário).
 </p> 
 </li>
 </ul>
