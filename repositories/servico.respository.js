@@ -17,6 +17,9 @@ async function getServices() {
         {
           model: Animal, include:[ Proprietario ]
         }
+      ],
+      order: [
+        ['servicoId','ASC' ]
       ]
     });
   } catch (err) {
@@ -38,8 +41,46 @@ async function getServicesByOwner(ownerId) {
   }
 }
 
+
+
+async function getService(servicoId) {
+  try {
+    return await Servico.findByPk(servicoId);
+  } catch (err) {
+    throw err;
+  }
+}
+
+async function updateService(service) {
+  try {
+   await Servico.update(service, {
+      where: {
+        servicoId: service.servicoId
+      }
+    });
+    return await getService(service.servicoId)
+  } catch (err) {
+    throw err;
+  }
+}
+
+async function deleteService(id) {
+  try {
+    await Servico.destroy({
+      where:{
+        servicoId: id
+      }
+    })
+  } catch (err) {
+    throw err;
+  }
+}
+
 export default {
   insertService,
   getServices,
-  getServicesByOwner
+  getServicesByOwner,
+  getService,
+  updateService,
+  deleteService
 }

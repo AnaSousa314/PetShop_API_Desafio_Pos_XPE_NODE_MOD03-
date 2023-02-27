@@ -11,7 +11,23 @@ async function getServices(ownerId) {
   return await ServicoRepository.getServices();
 }
 
+
+async function getService(servicoId) {
+  return await ServicoRepository.getService(servicoId);
+} 
+
+async function updateService(service) {
+  return await ServicoRepository.updateService(service);
+}
+
+async function deleteService(id) {
+  await ServicoRepository.deleteService(id);
+}
+
 export default {
   createService,
-  getServices
+  getServices,
+  getService,
+  updateService,
+  deleteService
 }

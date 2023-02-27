@@ -10,7 +10,7 @@ async function createAnimal(req, res, next) {
 
     animal = await AnimalService.createAnimal(animal);
     res.send(animal);
-    logger.info(`POST /proprietario - ${JSON.stringify(animal)}`);
+    logger.info(`POST /animal - ${JSON.stringify(animal)}`);
   } catch (err) {
     next(err)
   }
@@ -25,7 +25,7 @@ async function updateAnimal(req, res, next) {
     }
     animal = await AnimalService.updateAnimal(animal);
     res.send(animal);
-    logger.info(`PUT /proprietario - ${JSON.stringify(animal)}`)
+    logger.info(`PUT /animal - ${JSON.stringify(animal)}`)
   } catch (err) {
     next(err);
   }
