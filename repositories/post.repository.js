@@ -12,6 +12,17 @@ async function createPost(post) {
   }
 }
 
+async function getPosts() {
+  try {
+    const mongoose = await connect();
+    const Post = mongoose.model("Post", PostSchema);
+    const query = Post.find({});
+    return awa
+  } catch (err) {
+    throw err;
+  }
+}
+
 export default {
   createPost
 }
