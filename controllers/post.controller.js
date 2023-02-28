@@ -25,8 +25,18 @@ async function getPosts(req, res, next) {
   }
 }
 
+async function getPost(req, res, next) {
+  try {
+    res.send(await PostService.getPost(req.params.id));
+    logger.info(`GET /product/${req.params.id}`)
+  } catch (err) {
+    next(err);
+  }
+}
+
 
 export default {
   createPost,
-  getPosts
+  getPosts,
+  getPost
 }

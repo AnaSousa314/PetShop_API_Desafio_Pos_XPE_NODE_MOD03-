@@ -22,7 +22,23 @@ async function getPosts() {
   }
 }
 
+async function getPost(postId) {
+  try {
+    console.log(typeof(postId))
+    // postId = parseInt(postId)
+    console.log(typeof(postId))
+    const mongoose = await connect();
+    const Post = mongoose.model('Post', PostSchema);
+    // console.log(await Post.findById({ postId }))
+    console.log(await Post.findOne({ _id: postId }))
+    return await Post.findOne({ _id: postId })
+  } catch (err) {
+    throw err;
+  }
+}
+
 export default {
   createPost,
-  getPosts
+  getPosts,
+  getPost
 }

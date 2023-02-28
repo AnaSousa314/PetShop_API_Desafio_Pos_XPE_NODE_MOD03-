@@ -140,7 +140,7 @@
 </li>
 
 <li>
-	[] 02 - Consulta de todos os posts (retornar uma lista com todos os posts, sendo cada post representado por um objeto JSON com todas as propriedades, incluindo os comentários de cada post): 
+	[👾] 02 - Consulta de todos os posts (retornar uma lista com todos os posts, sendo cada post representado por um objeto JSON com todas as propriedades, incluindo os comentários de cada post): 
 <p>
         - URL: http://localhost:3000/post
 </p>
