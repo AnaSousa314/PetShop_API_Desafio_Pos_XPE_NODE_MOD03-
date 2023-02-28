@@ -16,13 +16,13 @@ async function getPosts() {
   try {
     const mongoose = await connect();
     const Post = mongoose.model("Post", PostSchema);
-    const query = Post.find({});
-    return awa
+    return await Post.find({});
   } catch (err) {
     throw err;
   }
 }
 
 export default {
-  createPost
+  createPost,
+  getPosts
 }

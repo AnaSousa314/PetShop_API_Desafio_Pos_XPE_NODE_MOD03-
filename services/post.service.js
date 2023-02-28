@@ -4,6 +4,11 @@ async function createPost(post) {
   await PostRepository.createPost(post)
 }
 
+async function getPosts(){
+  return await PostRepository.getPosts(); 
+}
+
 export default {
-  createPost
+  createPost,
+  getPosts
 }

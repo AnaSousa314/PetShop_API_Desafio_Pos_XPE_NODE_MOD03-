@@ -16,7 +16,17 @@ async function createPost(req, res, next) {
   }
 }
 
+async function getPosts(req, res, next) {
+  try {
+    res.send(await PostService.getPosts());
+    logger.info(`GET /post/ `)
+  } catch (err) {
+    next(err);
+  }
+}
+
 
 export default {
-  createPost
+  createPost,
+  getPosts
 }
