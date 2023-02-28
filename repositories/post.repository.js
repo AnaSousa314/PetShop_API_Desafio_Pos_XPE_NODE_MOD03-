@@ -37,8 +37,32 @@ async function getPost(postId) {
   }
 }
 
+async function updatePost(postId) {
+  try {
+    const mongoose = await connect();
+    const Post = mongoose.model("Post", PostSchema);
+    return Post.findOneAndUpdate({ _id: postId});
+  } catch (err) {
+    throw err;
+  }
+}
+
+async function createComentario(comentario, postId) {
+  try {
+    const post = await getPost(postId);
+    post.comentarios.push(comentario);
+    await updatePost(post);
+    await 
+  } catch (err) {
+    throw err;
+  }
+}
+
+
 export default {
   createPost,
   getPosts,
-  getPost
+  getPost,
+  updatePost,
+  createComentario
 }
