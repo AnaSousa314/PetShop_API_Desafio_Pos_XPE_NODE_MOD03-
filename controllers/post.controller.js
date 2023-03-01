@@ -34,9 +34,24 @@ async function getPost(req, res, next) {
   }
 }
 
+async function createComentario(req, res, next) {
+  try {
+    let params = req.body;
+    if (!params.postId || !params.comentarios) {
+      throw Error("Post ID e Comentário são obrigatórios!");
+    }
+    await PostService.createComentario(params.comentarios, params.postId);
+    res.send(params)
+    logger.info(`POST /post/comentario ${params.postId} - ${JSON.stringify(params.comentarios)}`)
+  } catch (err) {
+    next(err);
+  }
+}
+
 
 export default {
   createPost,
   getPosts,
-  getPost
+  getPost,
+  createComentario
 }

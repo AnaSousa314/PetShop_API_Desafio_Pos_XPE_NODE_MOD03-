@@ -24,24 +24,19 @@ async function getPosts() {
 
 async function getPost(postId) {
   try {
-    console.log(typeof(postId))
-    // postId = parseInt(postId)
-    console.log(typeof(postId))
     const mongoose = await connect();
     const Post = mongoose.model('Post', PostSchema);
-    // console.log(await Post.findById({ postId }))
-    console.log(await Post.findOne({ _id: postId }))
     return await Post.findOne({ _id: postId })
   } catch (err) {
     throw err;
   }
 }
 
-async function updatePost(postId) {
+async function updatePost(post) {
   try {
     const mongoose = await connect();
     const Post = mongoose.model("Post", PostSchema);
-    return Post.findOneAndUpdate({ _id: postId});
+    await Post.findOneAndUpdate({ _id: post.id}, post);
   } catch (err) {
     throw err;
   }
@@ -52,7 +47,6 @@ async function createComentario(comentario, postId) {
     const post = await getPost(postId);
     post.comentarios.push(comentario);
     await updatePost(post);
-    await 
   } catch (err) {
     throw err;
   }

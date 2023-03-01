@@ -153,7 +153,7 @@
 </li>
 
 <li>
-	[] 03 - Cadastro de um comentário:
+	[👾] 03 - Cadastro de um comentário:
 <p>
         - URL: http://localhost:3000/comentario
 </p>

@@ -12,9 +12,13 @@ async function getPost(postId) {
   return await PostRepository.getPost(postId);
 }
 
+async function createComentario(comentario, postId) {
+  await PostRepository.createComentario(comentario, postId);
+}
 
 export default {
   createPost,
   getPosts,
-  getPost
+  getPost,
+  createComentario
 }

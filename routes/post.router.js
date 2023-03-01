@@ -8,4 +8,6 @@ router.post("/", PostController.createPost);
 router.get("/", PostController.getPosts);
 router.get("/:id", PostController.getPost);
 
+router.post("/comentario", PostController.createComentario);
+
 export default router;
